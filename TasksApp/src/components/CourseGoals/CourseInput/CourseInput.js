@@ -54,20 +54,20 @@ const CourseInput = (props) => {
       setIsValid(false);
     }
     event.preventDefault();
-    {
-      enteredValue.trim().length !== 0 && props.onAddGoal(enteredValue);
-    }
+    enteredValue.trim().length !== 0 && props.onAddGoal(enteredValue);
   };
 
   return (
     <form onSubmit={formSubmitHandler}>
-      <div className = {`${styles["form-control"]} ${!isValid && styles.invalid}`}>
+      <div
+        className={`${styles["form-control"]} ${!isValid && styles.invalid}`}
+      >
         <label>Course Goal</label>
         <input type="text" onChange={goalInputChangeHandler} />
       </div>
       <Button type="submit">Add Goal</Button>
     </form>
-  )
+  );
 };
 
 export default CourseInput;
